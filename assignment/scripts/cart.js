@@ -2,35 +2,57 @@ console.log('***** Cart Functions *****');
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 let basket = [];
+const maxItems = 5;
 
-function addItem( item ) {
-    console.log( 'Current number of items in Basket:', basket.length );
-    console.log( 'Added Item: ' + item );
-    basket.push(item);
-//    for ( i = 0; i < .length; i++) {
-      return true;
+function addItem(item) {
+  while (basket.push(item)) {
+  return true;
+ }
 }
-      // console.log( 'Items in Basket: ', basket );
-      // console.log('Item Added: (expect true)', addItem('apples'));
-      console.log('Item Added: (expect true)', addItem('apples'));
 
-
-addItem( 'apples');
-addItem( 'bananas');
-addItem( 'oranges');
-
-function listItem( array ) {
-  for (let i=0; i<array.length;i++){
-    console.log( 'Items in Basket (Individual): ', basket[i]);
+function listItems() {
+  for (i = 0; i < basket.length; i++ ) {
+  console.log ( basket[i] );
   }
 }
 
-listItem(basket);
-
-function empty( array ) {
+function empty() {
   basket.length = 0;
+  // while (basket.length > 0) {
+  //   basket.pop(basket);
+    return 'Empty';
+  }
+
+function isFull() {
+  while (maxItems <= basket.length) {
+    return true;
+  }
+    return false;
 }
 
-empty(basket);
-
-console.log( 'Empty Basket - Current number of items in Basket: ', basket.length );
+console.log( 'Basket is:', basket.length );
+console.log( 'Added apples', addItem( 'apples'));
+console.log( 'Basket is now:', basket.length);
+console.log( 'Basket is full:', isFull());
+console.log( 'Basket is:', basket.length );
+console.log( 'Added bananas', addItem( 'bananas'));
+console.log( 'Basket is now:', basket.length);
+console.log( 'Basket is full:', isFull());
+console.log( 'Basket is:', basket.length );
+console.log( 'Added oranges', addItem( 'oranges'));
+console.log( 'Basket is now:', basket.length);
+console.log( 'Basket is full:', isFull());
+console.log( 'Basket is:', basket.length );
+console.log( 'Added limes', addItem( 'limes'));
+console.log( 'Basket is now:', basket.length);
+console.log( 'Basket is full:', isFull());
+console.log( 'Basket is:', basket.length );
+console.log( 'Added lemons', addItem( 'lemons'));
+console.log( 'Basket is now:', basket.length);
+console.log( 'Basket is full:', isFull());
+console.log( 'Basket is:', basket.length );
+console.log( 'Added just one more thing!', addItem( 'one more thing'));
+console.log( 'Basket is now:', basket.length);
+console.log( 'Basket is full:', isFull());
+console.log( 'Emptying basket:', empty());
+console.log( 'Basket is:', basket.length );
